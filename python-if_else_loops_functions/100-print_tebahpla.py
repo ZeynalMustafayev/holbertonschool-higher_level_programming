@@ -4,4 +4,4 @@ for i in range(122, 96, -1):
         z = i
     else:
         z = i - 32
-    print("{}".format(str(z)), end="")
+    print("{}".format(chr(z)), end="")
