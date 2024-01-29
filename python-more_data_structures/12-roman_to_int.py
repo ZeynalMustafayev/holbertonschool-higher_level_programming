@@ -11,6 +11,8 @@ def roman_to_int(roman_string):
     }
     res = 0
     prev_value = 0
+    if roman_string is None or not isinstance(roman_string, str):
+        return 0
     for symbol in reversed(roman_string):
         current_value = roman_values[symbol]
         if current_value >= prev_value:
