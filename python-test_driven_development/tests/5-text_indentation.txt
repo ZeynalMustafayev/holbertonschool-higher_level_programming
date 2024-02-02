@@ -1,5 +1,5 @@
 ===================================================
-Tests for matrix_divided in 5-text_indentation.py
+Tests for text_indentation in 5-text_indentation.py
 ===================================================
 
 :param text: str
@@ -9,7 +9,9 @@ Tests for matrix_divided in 5-text_indentation.py
 
 >>> text_indentation("some text.")
 some text.
-<BLANKLINE>
+
+>>> text_indentation("What is this?")
+What is this?
 
 >>> text_indentation(5)
 Traceback (most recent call last):
@@ -18,3 +20,4 @@ TypeError: text must be a string
 >>> text_indentation()
 Traceback (most recent call last):
 TypeError: text_indentation() missing 1 required positional argument: 'text'
+
