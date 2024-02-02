@@ -1,15 +1,26 @@
-#!/usr/bin/python3
-"""3-say_my_name.py and tests/3-say_my_name.txt"""
+===================================================
+Tests for matrix_divided in 3-say_my_name.txt
+===================================================
 
+:param first_name: str
+:param last_name: str
+:return: str
 
-def say_my_name(first_name, last_name=""):
-    """
-    My name is <first name> <last name>
-    unit tests located in tests/3-say_my_name.txt
-    checks for type errors
-    """
-    if not isinstance(first_name, str):
-        raise TypeError("first_name must be a string")
-    if not isinstance(last_name, str):
-        raise TypeError("last_name must be a string")
-    print("My name is {} {}".format(first_name, last_name))
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+>>> say_my_name("Walter", "White")
+My name is Walter White
+
+>>> say_my_name(89, "Nigger")
+Traceback (most recent call last):
+  ...
+TypeError: first_name must be a string
+
+>>> say_my_name("Nigger", 98)
+Traceback (most recent call last):
+  ...
+TypeError: last_name must be a string
+
+>>> say_my_name()
+Traceback (most recent call last):
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
