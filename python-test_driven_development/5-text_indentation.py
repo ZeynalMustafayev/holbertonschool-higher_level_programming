@@ -23,6 +23,9 @@ def text_indentation(text):
             lines.append(current_line.strip())
             current_line = ""
 
+    if current_line:
+        lines.append(current_line.strip())
+
     for line in lines:
         print(line)
         print()
