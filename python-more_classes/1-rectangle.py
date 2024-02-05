@@ -6,8 +6,8 @@ class Rectangle:
     """Square class with private attribute size"""
     def __init__(self, width=0, height=0):
         """Initialize Square with size attribute"""
-        self.width = width
         self.height = height
+        self.width = width
 
     @property
     def width(self):
