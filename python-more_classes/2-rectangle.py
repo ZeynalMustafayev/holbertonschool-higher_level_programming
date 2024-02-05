@@ -9,7 +9,6 @@ class Rectangle:
         """Initialize Rectangle with width and height attributes"""
         self.height = height
         self.width = width
-        
 
     @property
     def height(self):
@@ -36,7 +35,12 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         else:
             self.__width = value
+
     def area(self):
         return self.width * self.height
+
     def perimeter(self):
-        return (self.width + self.height) * 2
+        if self.width == 0 or self.height == 0:
+            return 0
+        else:
+            return (self.width + self.height) * 2
