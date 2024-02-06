@@ -3,24 +3,15 @@
 
 
 class Rectangle:
-    """Square class with private attribute size"""
+    """Rectangle class with private attributes width and height"""
+    number_of_instances = 0
+    print_symbol = "#"
+
     def __init__(self, width=0, height=0):
-        """Initialize Square with size attribute"""
+        """Initialize Rectangle with width and height attributes"""
         self.height = height
         self.width = width
-
-    @property
-    def width(self):
-        return self.__width
-
-    @width.setter
-    def width(self, value):
-        if not isinstance(value, int):
-            TypeError("width must be an integer")
-        elif value < 0:
-            ValueError("width must be >= 0")
-        else:
-            self.__width = value
+        Rectangle.number_of_instances += 1
 
     @property
     def height(self):
@@ -29,8 +20,8 @@ class Rectangle:
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
-            TypeError("height must be an integer")
+            raise TypeError("height must be an integer")
         elif value < 0:
-            ValueError("height must be >= 0")
+            raise ValueError("height must be >= 0")
         else:
             self.__height = value
