@@ -55,9 +55,11 @@ class Rectangle:
             return ""
         else:
             if getattr(self, "print_symbol"):
-                return "\n".join([str(self.print_symbol) * self.__width] * self.__height)
-            else:  
-                return "\n".join([str(Rectangle.print_symbol) * self.__width] * self.__height)
+                a = self.__width
+                b = self.__height
+                return "\n".join([str(self.print_symbol) * a] * b)
+            else:
+                return "\n".join([str(Rectangle.print_symbol) * a] * b)
 
     def __repr__(self):
         """
@@ -70,8 +72,8 @@ class Rectangle:
 
     def __dict__(self):
         return Rectangle.__dict__
-    
-    @staticmethod 
+
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
@@ -83,4 +85,3 @@ class Rectangle:
             return rect_1
         else:
             return rect_2
-
