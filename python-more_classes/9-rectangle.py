@@ -58,7 +58,7 @@ class Rectangle:
                 a = self.__width
                 b = self.__height
                 return "\n".join([str(self.print_symbol) * a] * b)
-            else:  
+            else:
                 return "\n".join([str(Rectangle.print_symbol) * a] * b)
 
     def __repr__(self):
@@ -72,3 +72,20 @@ class Rectangle:
 
     def __dict__(self):
         return Rectangle.__dict__
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() > rect_2.area():
+            return rect_1
+        elif rect_1.area() == rect_2.area():
+            return rect_1
+        else:
+            return rect_2
+    
+    def square(cls, size=0):
+        
+
