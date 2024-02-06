@@ -51,6 +51,7 @@ class Rectangle:
             return ""
         else:
             return "\n".join(["#" * self.__width] * self.__height)
+
     def __repr__(self):
         """
         Returns a string representation of the rectangle for eval()."""
