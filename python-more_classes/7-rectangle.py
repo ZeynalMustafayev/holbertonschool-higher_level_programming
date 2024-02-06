@@ -58,7 +58,7 @@ class Rectangle:
                 a = self.__width
                 b = self.__height
                 return "\n".join([str(self.print_symbol) * a] * b)
-            else:  
+            else:
                 return "\n".join([str(Rectangle.print_symbol) * a] * b)
 
     def __repr__(self):
