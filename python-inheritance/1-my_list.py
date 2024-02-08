@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-"""a function  returns the list of available attributes and methods"""
+
+"""
+    The ``MyList`` module
+"""
 
 
 class MyList(list):
     """mylist class"""
     def print_sorted(self):
-        """print_sorted"""
         sorted_list = sorted(self)
         print(sorted_list)
