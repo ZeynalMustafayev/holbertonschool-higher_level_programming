@@ -19,3 +19,7 @@ class Rectangle(BaseGeometry):
     def area(self):
         """func is docced"""
         return self.__width * self.__height
+
+    def __str__(self):
+        """For print return messsage"""
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
