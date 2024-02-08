@@ -1,12 +1,9 @@
 #!/usr/bin/python3
-
-"""
-    The ``MyList`` module
-"""
+"""The MyList module"""
 
 
 class MyList(list):
-    """ Mylist class """
+    """Mylist class"""
     def print_sorted(self):
         """fucn is docced"""
         sorted_list = sorted(self)
