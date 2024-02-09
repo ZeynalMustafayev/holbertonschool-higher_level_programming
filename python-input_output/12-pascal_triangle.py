@@ -6,7 +6,7 @@ def pascal_triangle(n):
     """Determine pascal triangle"""
     if n <= 0:
         return list
-    
+
     current_list = [1]
     temp = []
     last_version = []
