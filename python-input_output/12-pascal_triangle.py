@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+"""Pascal Triangle"""
 
 
 def pascal_triangle(n):
+    """Determine pascal triangle"""
     if n <= 0:
         return list
     
