@@ -16,32 +16,32 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        self.__width = width
+        return self.__width
 
     @width.setter
     def width(self, value):
-        pass
+        self.__width = value
 
     @property
     def height(self):
-        self.__height = height
+        return self.__height
 
     @height.setter
     def height(self, value):
-        pass
+        self.__height = value
 
     @property
     def x(self):
-        self.__x = x
+        return self.__x
 
     @x.setter
     def x(self, value):
-        pass
+        self.__x = value
 
     @property
     def y(self):
-        self.__y = y
+        return self.__y
 
     @y.setter
     def y(self, value):
-        pass
+        self.__y = value
