@@ -109,3 +109,11 @@ class Rectangle(Base):
             elif key == "y":
                 self.y = value
         return args
+
+    def to_dictionary(self):
+        """Update the class Rectangle by adding the public method"""
+        return {"id": self.id,
+                "width": self.width,
+                "height": self.height,
+                "x": self.x,
+                "y": self.y}
