@@ -39,7 +39,14 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(ValueError):
             Square(0)
         with self.assertRaises(ValueError):
+            Square(-1)
+        with self.assertRaises(ValueError):
             Square(1, 2, -3)
+
+    #Test str
+    def test_str(self):
+        self.assertEqual(self.s4.__str__(), "[Square] (4) 2/3 - 1")
+
 
 
     def tearDown(self):
