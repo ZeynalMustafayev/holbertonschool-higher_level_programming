@@ -72,6 +72,11 @@ class TestSquare(unittest.TestCase):
         Square.save_to_file([Square(1, 2, id=1)])
         with open("Square.json", "r") as file:
             self.assertEqual(file.read(), '[{"id": 1, "size": 1, "x": 2, "y": 0}]')
+    
+    #Test load_from_file
+    def test_load(self):
+        rec_list = Square.load_from_file()
+        self.assertEqual(rec_list, [])
 
     def tearDown(self):
         try:
