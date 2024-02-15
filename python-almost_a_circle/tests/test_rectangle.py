@@ -53,3 +53,18 @@ class TestRectangle(unittest.TestCase):
     #Test str
     def test_str(self):
         self.assertEqual(self.r3.__str__(), "[Rectangle] (1) 1/1 - 1/1")
+
+    #Test display
+    def test_display(self):
+        output = "#\n#\n"
+        with patch("sys.stdout", new=StringIO()) as output:
+            self.r1.display()
+            self.assertEqual(output.getvalue(), output)
+        output = "\n #\n"
+        with patch("sys.stdout", new=StringIO()) as output:
+            self.r3.display()
+            self.assertEqual(output.getvalue(), output)
+
+    #Test dictionary 
+    def test_dictionary(self):
+        self.assertEqual(self.r3.to_dictionary(), {"width": 1, "height": 1, "x": 1, "y": 1, "id": 1})
