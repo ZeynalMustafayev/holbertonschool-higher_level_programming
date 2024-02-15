@@ -47,7 +47,10 @@ class TestSquare(unittest.TestCase):
     def test_str(self):
         self.assertEqual(self.s4.__str__(), "[Square] (4) 2/3 - 1")
 
-
+    #Test update
+    def test_update(self):
+        self.s3.update(1, 1, 1, 1, 1)
+        self.assertEqual(str(self.s3), "[Square] (1) 1/1 - 1")
 
     def tearDown(self):
         try:
