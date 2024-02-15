@@ -57,6 +57,12 @@ class TestSquare(unittest.TestCase):
         new = Square.create(**self.new_dictionary)
         self.assertEqual(str(new), "[Square] (1) 1/1 - 1")
 
+    #Test save_to_file
+    def test_save_to_file(self):
+        Square.save_to_file(None)
+        with open("Square.json", "r") as f:
+            self.assertEqual(f.read(), "[]")
+
     def tearDown(self):
         try:
             os.remove("Square.json")
