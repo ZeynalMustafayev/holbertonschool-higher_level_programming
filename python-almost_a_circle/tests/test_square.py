@@ -31,6 +31,16 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(TypeError):
             Square(1, 2, "3")
 
+        """ValueError"""
+        with self.assertRaises(ValueError):
+            Square(1, -2)
+        with self.assertRaises(ValueError):
+            Square(0, 2)
+        with self.assertRaises(ValueError):
+            Square(0)
+        with self.assertRaises(ValueError):
+            Square(1, 2, -3)
+
 
     def tearDown(self):
         try:
