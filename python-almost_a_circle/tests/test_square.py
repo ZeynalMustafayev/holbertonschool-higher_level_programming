@@ -21,3 +21,19 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(self.s2.x, 2)
         self.assertEqual(self.s3.y, 3)
         self.assertEqual(self.s4.id, 4)
+
+    
+        """TypeError"""
+        with self.assertRaises(TypeError):
+            Square("1", 2)
+        with self.assertRaises(TypeError):
+            Square(1, "2")
+        with self.assertRaises(TypeError):
+            Square(1, 2, "3")
+
+
+    def tearDown(self):
+        try:
+            os.remove("Square.json")
+        except:
+            pass
