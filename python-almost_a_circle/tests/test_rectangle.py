@@ -11,7 +11,6 @@ class TestRectangle(unittest.TestCase):
         self.r3 = Rectangle(1, 1, 1, 1, 1)
 
         self.new_dictionary = {"x": 1, "y": 1, "id": 1, "height": 1, "width": 1}
-        self.r1_list = [self.r1]
     
     #Test cases
     def test_rectangle(self):
@@ -96,8 +95,14 @@ class TestRectangle(unittest.TestCase):
             self.assertEqual(f.read(), '[{"id": 1, "width": 1, "height": 2, "x": 0, "y": 0}]')
 
     #Test load_from_file
-    #def test_load(self):
-        #self.assertEqual(Rectangle.load_from_file(), [])
+    def test_load(self):
+        rec_list = Rectangle.load_from_file()
+        self.assertEqual(rec_list, [])
 
-        #Rectangle.save_to_file(self.r1_list)
-        #self.assertEqual(self.r1_list[0].__str__(), Rectangle.load_from_file()[0].__str__())
+    def tearDown(self):
+        """This method is called after each test"""
+
+        try:
+            os.remove("Rectangle.json")
+        except:
+            pass
