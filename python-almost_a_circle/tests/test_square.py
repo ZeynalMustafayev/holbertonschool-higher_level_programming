@@ -13,7 +13,11 @@ class TestSquare(unittest.TestCase):
         self.s2 = Square(1, 2)
         self.s3 = Square(1, 2, 3)
         self.s4 = Square(1, 2, 3, 4)
-        self.new_dicts = {"id": 2, "size": 2, "x": 2, "y": 2}
+        self.new_dicts = {"id": 1, "size": 1, "x": 1, "y": 1}
         self.list_s1 = [self.s1]
 
-
+    def test_checker(self):
+        self.assertEqual(self.s1.size, 1)
+        self.assertEqual(self.s2.x, 2)
+        self.assertEqual(self.s3.y, 3)
+        self.assertEqual(self.s4.id, 4)
