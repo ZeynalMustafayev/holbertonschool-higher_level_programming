@@ -78,3 +78,9 @@ class TestRectangle(unittest.TestCase):
     def test_create(self):
         new = Rectangle.create(**self.new_dictionary)
         self.assertEqual(str(new), "[Rectangle] (1) 1/1 - 1/1")
+
+    #test save_to_file
+    def test_save(self):
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
