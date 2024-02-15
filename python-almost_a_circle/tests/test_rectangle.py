@@ -57,13 +57,13 @@ class TestRectangle(unittest.TestCase):
     #Test display
     def test_display(self):
         output = "#\n#\n"
-        with patch("sys.stdout", new=StringIO()) as output:
+        with patch("sys.stdout", new=StringIO()) as o:
             self.r1.display()
-            self.assertEqual(output.getvalue(), output)
+            self.assertEqual(o.getvalue(), output)
         output = "\n #\n"
-        with patch("sys.stdout", new=StringIO()) as output:
+        with patch("sys.stdout", new=StringIO()) as out:
             self.r3.display()
-            self.assertEqual(output.getvalue(), output)
+            self.assertEqual(out.getvalue(), output)
 
     #Test dictionary 
     def test_dictionary(self):
