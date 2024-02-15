@@ -13,7 +13,7 @@ class TestSquare(unittest.TestCase):
         self.s2 = Square(1, 2)
         self.s3 = Square(1, 2, 3)
         self.s4 = Square(1, 2, 3, 4)
-        self.new_dicts = {"id": 1, "size": 1, "x": 1, "y": 1}
+        self.new_dictionary = {"id": 1, "size": 1, "x": 1, "y": 1}
         self.list_s1 = [self.s1]
 
     def test_checker(self):
@@ -51,6 +51,11 @@ class TestSquare(unittest.TestCase):
     def test_update(self):
         self.s3.update(1, 1, 1, 1, 1)
         self.assertEqual(str(self.s3), "[Square] (1) 1/1 - 1")
+
+    #Test create
+    def test_create(self):
+        new = Square.create(**self.new_dictionary)
+        self.assertEqual(str(new), "[Square] (1) 1/1 - 1")
 
     def tearDown(self):
         try:
