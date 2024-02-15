@@ -80,17 +80,17 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(str(new), "[Rectangle] (1) 1/1 - 1/1")
 
     #Test save_to_file
-    def test_save(self):
+    def test_save_to_file(self):
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as f:
             self.assertEqual(f.read(), "[]")
 
-    def test_save2(self):
+    def test_save_to_file_empty_list(self):
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as f:
             self.assertEqual(f.read(), "[]")
 
-    def test_save3(self):
+    def test_save_to_file_with_data(self):
         Rectangle.save_to_file([Rectangle(1, 2, id=1)])
         with open("Rectangle.json", "r") as f:
             self.assertEqual(f.read(), '[{"id": 1, "width": 1, "height": 2, "x": 0, "y": 0}]')
@@ -99,8 +99,8 @@ if __name__ == '__main__':
     unittest.main()
 
     #Test load_from_file
-    #def test_load(self):
-        #self.assertEqual(Rectangle.load_from_file(), [])
+    def test_load(self):
+        self.assertEqual(Rectangle.load_from_file(), [])
 
-        #Rectangle.save_to_file(self.r1_list)
-        #self.assertEqual(self.r1_list[0].__str__(), Rectangle.load_from_file()[0].__str__())
+        Rectangle.save_to_file(self.r1_list)
+        self.assertEqual(self.r1_list[0].__str__(), Rectangle.load_from_file()[0].__str__())
