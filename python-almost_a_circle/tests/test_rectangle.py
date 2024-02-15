@@ -68,3 +68,8 @@ class TestRectangle(unittest.TestCase):
     #Test dictionary 
     def test_dictionary(self):
         self.assertEqual(self.r3.to_dictionary(), {"width": 1, "height": 1, "x": 1, "y": 1, "id": 1})
+
+    #Test update
+    def test_update(self):
+        self.r3.update(1, 1, 1, 1, 1)
+        self.assertEqual(str(self.r3), "[Rectangle] (1) 1/1 - 1/1")
