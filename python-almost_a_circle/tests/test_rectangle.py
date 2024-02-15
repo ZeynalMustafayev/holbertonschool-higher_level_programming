@@ -49,3 +49,7 @@ class TestRectangle(unittest.TestCase):
     #Test area
     def test_area(self):
         self.assertEqual(self.r1.area(), 2)
+
+    #Test str
+    def test_str(self):
+        self.assertEqual(self.r3.__str__(), "[Rectangle] (1) 1/1 - 1/1")
