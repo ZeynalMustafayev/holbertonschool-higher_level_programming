@@ -3,6 +3,7 @@
 
 
 import json
+import turtle
 
 
 class Base:
@@ -68,3 +69,30 @@ class Base:
                 return [cls.create(**d) for d in dicts]
         except FileNotFoundError:
             return []
+
+
+    def draw(list_rectangles, list_squares):
+        for i in list_rectangles:
+            pen = turtle.Turtle()
+            pen.color("blue")
+            pen.forward(i.width)
+            pen.left(90)
+            pen.forward(i.height)
+            pen.left(90)
+            pen.forward(i.width)
+            pen.left(90)
+            pen.forward(i.height)
+
+        for j in list_squares:
+            pen = turtle.Turtle()
+            pen.color("red")
+            pen.forward(i.size)
+            pen.left(90)
+            pen.forward(i.size)
+            pen.left(90)
+            pen.forward(i.size)
+            pen.left(90)
+            pen.forward(i.size)
+            pen.left(90)
+
+        turtle.done()
