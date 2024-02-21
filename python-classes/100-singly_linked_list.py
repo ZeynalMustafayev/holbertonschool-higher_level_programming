@@ -30,6 +30,7 @@ class Node:
 
 
 class SinglyLinkedList:
+    """class SinglyLinkedList"""
     def __init__(self):
         self.head = None
 
