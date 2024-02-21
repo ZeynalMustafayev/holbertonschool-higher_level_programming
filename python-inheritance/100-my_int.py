@@ -3,6 +3,7 @@
 
 
 class MyInt(int):
+    """Class is documented"""
     def __eq__(self, other):
         return super().__ne__(other)
 
